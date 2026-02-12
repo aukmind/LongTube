@@ -1,0 +1,27 @@
+/* Hide the dedicated Shorts shelf on the homepage */
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-shelf-renderer:has(span#title[aria-label="Shorts"]) {
+    display: none !important;
+}
+
+/* Hide the Shorts reel (often appears in search results) */
+ytd-reel-shelf-renderer {
+    display: none !important;
+}
+
+/* Hide the Shorts icon in the mini-sidebar (collapsed menu) */
+ytd-mini-guide-entry-renderer[aria-label="Shorts"] {
+    display: none !important;
+}
+
+/* Hide the Shorts button in the main Sidebar */
+/* Uses :has selector, which is supported in modern Firefox */
+ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+ytd-guide-entry-renderer:has(a[title="Shorts"]) {
+    display: none !important;
+}
+
+/* Hide individual Short videos that might appear in a standard grid */
+ytd-rich-item-renderer:has(a[href^="/shorts"]) {
+    display: none !important;
+}
