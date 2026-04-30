@@ -25,3 +25,19 @@ ytd-guide-entry-renderer:has(a[title="Shorts"]) {
 ytd-rich-item-renderer:has(a[href^="/shorts"]) {
     display: none !important;
 }
+
+/* Hide the new Shorts shelf on the search-results page */
+ytm-shorts-lockup-view-model,
+ytm-shorts-lockup-view-model-v2 {
+    display: none !important;
+}
+
+/* Hide individual Shorts results on the search page */
+ytd-video-renderer:has(a[href^="/shorts/"]) {
+    display: none !important;
+}
+
+/* Hide the "Shorts" filter chip on the search page */
+yt-chip-cloud-chip-renderer:has(button[aria-label="Shorts"]) {
+    display: none !important;
+}
