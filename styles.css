@@ -1,4 +1,5 @@
 /* Hide the dedicated Shorts shelf on the homepage */
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
 ytd-rich-shelf-renderer[is-shorts],
 ytd-rich-shelf-renderer:has(span#title[aria-label="Shorts"]) {
     display: none !important;
@@ -39,5 +40,45 @@ ytd-video-renderer:has(a[href^="/shorts/"]) {
 
 /* Hide the "Shorts" filter chip on the search page */
 yt-chip-cloud-chip-renderer:has(button[aria-label="Shorts"]) {
+    display: none !important;
+}
+
+/* Hide the YouTube Playables shelf, its items, and the sidebar entry */
+ytd-rich-section-renderer:has(a[href^="/playables"]),
+ytd-rich-shelf-renderer:has(a[href^="/playables"]),
+ytd-rich-item-renderer:has(a[href^="/playables"]),
+ytd-guide-entry-renderer:has(a[href^="/playables"]),
+ytd-mini-guide-entry-renderer:has(a[href^="/playables"]) {
+    display: none !important;
+}
+
+/* Mobile (m.youtube.com): Shorts shelves in home, search and channel feeds */
+ytm-reel-shelf-renderer,
+ytm-rich-section-renderer:has(ytm-reel-shelf-renderer),
+ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model),
+ytm-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2),
+ytm-item-section-renderer:has(ytm-reel-shelf-renderer),
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2) {
+    display: none !important;
+}
+
+/* Mobile: individual Shorts in feeds and search results */
+ytm-rich-item-renderer:has(a[href^="/shorts"]),
+ytm-video-with-context-renderer:has(a[href^="/shorts"]),
+ytm-compact-video-renderer:has(a[href^="/shorts"]) {
+    display: none !important;
+}
+
+/* Mobile: Shorts tab in the bottom bar and the Shorts filter chip */
+ytm-pivot-bar-item-renderer:has(.pivot-shorts),
+ytm-pivot-bar-item-renderer:has(a[href^="/shorts"]),
+ytm-chip-cloud-chip-renderer:has(a[href^="/shorts"]) {
+    display: none !important;
+}
+
+/* Mobile: Playables */
+ytm-rich-section-renderer:has(a[href^="/playables"]),
+ytm-rich-item-renderer:has(a[href^="/playables"]) {
     display: none !important;
 }
